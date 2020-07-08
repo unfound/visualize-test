@@ -1,0 +1,14 @@
+{
+  "name": "threejs-cases",
+  "version": "1.0.0",
+  "description": "A test for threejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "unfoud",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.118.3"
+  }
+}
