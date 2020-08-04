@@ -5,7 +5,7 @@ import './style/style.less'
 const THREE = require('three')
 
 const scene = new THREE.Scene()
-const geometry = new THREE.BoxGeometry(100,100,100)
+const geometry = new THREE.BoxGeometry(100, 100, 100)
 const material = new THREE.MeshLambertMaterial({
     color: 0x0000ff
 })
@@ -33,6 +33,6 @@ renderer.setClearColor(0xb9d3ff, 1)
 document.body.appendChild(renderer.domElement)
 renderer.render(scene, camera)
 
-_.defer(stamp => {
+_.defer((stamp: number) => {
     console.log(_.now() - stamp)
 }, _.now())

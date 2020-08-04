@@ -10,10 +10,10 @@ console.log(process.env.NODE_ENV)
 
 module.exports = {
     entry: {
-        app: resolve('src/index.js')
+        app: resolve('src/index.ts')
     },
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.tsx', '.ts', '.js'],
         alias: {
             '@': resolve('src')
         }
@@ -74,6 +74,10 @@ module.exports = {
                     'babel-loader',
                     'eslint-loader'
                 ]
+            }, {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
             }
         ]
     }
