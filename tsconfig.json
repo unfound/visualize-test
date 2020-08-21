@@ -1,14 +1,18 @@
 {
     "compilerOptions": {
         "outDir": "./dist/",
+        "baseUrl": ".",
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "es6",
         "target": "es5",
         "jsx": "react",
-        "allowJs": false,
-        "allowSyntheticDefaultImports": true
+        "allowJs": true,
+        // 解决一些引入模块找不到报错的设置
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true
     },
-    "include": ["src/*"],
+    "include": ["src/*", "./index.d.ts"],
     "exclude": ["node_modules"]
 }

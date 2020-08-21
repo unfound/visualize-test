@@ -7,7 +7,8 @@ module.exports = {
     mode: 'production',
     entry: {
         lodash: ['lodash'],
-        three: ['three']
+        three: ['three'],
+        pixi: ['pixi.js']
     },
     output: {
         path: resolve('static'),

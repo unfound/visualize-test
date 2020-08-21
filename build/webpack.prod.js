@@ -25,8 +25,8 @@ module.exports = merge(common, {
             filename: '[name].[contenthash].css',
             chunkFilename: '[contenthash].css'
         }),
-        new webpack.HashedModuleIdsPlugin(),
-    ],
+        new webpack.HashedModuleIdsPlugin()
+    ]
     // optimization: {
     //     runtimeChunk: 'single',
     //     splitChunks: {
