@@ -33,6 +33,9 @@ module.exports = {
         }),
         new webpack.DllReferencePlugin({
             manifest: require('../static/three-manifest.json')
+        }),
+        new webpack.DllReferencePlugin({
+            manifest: require('../static/pixi-manifest.json')
         })
     ],
     module: {

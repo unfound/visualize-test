@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%= htmlWebpackPlugin.options.title %></title>
   <script src="<%= webpackConfig.output.publicPath %>lodash.dll.js"></script>
-  <!-- <script src="<%= webpackConfig.output.publicPath %>three.dll.js"></script> -->
-  <!-- <script src="<%= webpackConfig.output.publicPath %>pixi.dll.js"></script> -->
+  <script src="<%= webpackConfig.output.publicPath %>three.dll.js"></script>
+  <script src="<%= webpackConfig.output.publicPath %>pixi.dll.js"></script>
 </head>
 <body>
-  <!-- <div>
+  <div class="btn-groups">
     <button class="start-btn">开始</button>
     <button class="stop-btn">停止</button>
-  </div> -->
+  </div>
   <div id="myCanvas"></div>
 </body>
 </html>
