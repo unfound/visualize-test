@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <script>
+    function resetBodyFontSize () {
+      let windowWidth = window.innerWidth || document.body.clientWidth
+      let bodyFontSize = windowWidth / 375 * 100
+      document.documentElement.style.fontSize = bodyFontSize + 'px'
+    }
+    resetBodyFontSize()
+    window.addEventListener('resize', resetBodyFontSize, false)
+  </script>
   <script src="<%= webpackConfig.output.publicPath %>lodash.dll.js"></script>
   <script src="<%= webpackConfig.output.publicPath %>three.dll.js"></script>
   <script src="<%= webpackConfig.output.publicPath %>pixi.dll.js"></script>

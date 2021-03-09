@@ -5,11 +5,11 @@ import './style/style.less'
 // import './ts/decorators'
 // import './ts/three-test'
 // import pixiTest from './ts/pixi-test'
-import { protonTest, Firework } from './ts/proton-test'
-import { transformPascalToCamelcase } from './ts/utils'
+import { Firework } from './ts/proton-test'
+import { transformPascalToCamelcase, generatorTest } from './ts/utils'
+import testKoa2 from './ts/koa2'
 
 // pixiTest()
-// protonTest()
 const firework = new Firework()
 firework.start()
 
@@ -25,3 +25,6 @@ const obj = {
 }
 
 console.log(transformPascalToCamelcase(obj))
+console.log('=============================')
+generatorTest()
+testKoa2()

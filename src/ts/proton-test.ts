@@ -1,6 +1,7 @@
 import Proton from 'proton-engine'
 import Stats from 'stats.js'
 import RAFManager from 'raf-manager'
+import Modal from './Modal'
 
 export function protonTest () {
     const canvas = document.createElement('canvas')
@@ -94,6 +95,7 @@ export class Firework {
     stats: any
     context: CanvasRenderingContext2D
     colors: Array<string>
+    $modal: Modal
     constructor () {
         this.colors = ['#fc5185', '#3fc1c9', '#30e3ca', '#cbf1f5', '#cca8e9', '#b61aae', '#f1c40f', '#00eaff', '#c7ffff', '#3fc5f0']
         this.createCanvas()
@@ -102,14 +104,18 @@ export class Firework {
         this.createProton(this.canvas)
         this.renderProton = this.renderProton.bind(this)
         RAFManager.add(this.renderProton)
+
+        this.$modal = new Modal()
     }
 
     start () {
         RAFManager.start()
+        this.$modal.show()
     }
 
     stop () {
         RAFManager.stop()
+        this.$modal.close()
     }
 
     initBtn () {
@@ -179,8 +185,8 @@ export class Firework {
         renderer.onProtonUpdate = function () {
             context.save()
             // context.globalCompositeOperation = 'lighter'
-            this.context.shadowColor = 'rgb(0, 0, 0, 0)'
-            this.context.shadowBlur = 0
+            // this.context.shadowColor = 'rgb(0, 0, 0, 0)'
+            // this.context.shadowBlur = 0
             context.fillStyle = 'rgba(0, 0, 0, 0.1)'
             context.fillRect(0, 0, canvas.width, canvas.height)
             context.restore()
@@ -274,7 +280,7 @@ export class Firework {
     }
 
     shadowBehaviour () {
-        const _this = this
+        // const _this = this
         return {
             initialize: function (particle: any) {
                 // console.log(particle)
